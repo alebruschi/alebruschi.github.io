@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Alessandro Bruschi – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Alessandro Bruschi</h1>
+    <p>Search & eCommerce Specialist</p>
+  </header>
+
+  <section class="intro">
+    <p>I’m a London‑based Search & eCommerce Specialist with 9+ years’ experience in PPC, performance media, and multi‑market account management. I help brands grow through smart strategy, clear communication, and a hands‑on approach to optimisation.</p>
+  </section>
+
+  <section>
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>PPC Consultant – Kelkoo Group</strong> (2019–Present)</li>
+      <li><strong>Search Account Manager – Reprise Digital</strong> (2017–2019)</li>
+      <li><strong>Paid Search Planner – PHD Worldwide</strong> (2016–2017)</li>
+      <li><strong>Paid Search Executive – PHD Worldwide</strong> (2015–2016)</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <p>PPC Strategy, Paid Search, eCommerce, Google Ads, Performance Max, Microsoft Ads, Meta Ads, Reporting, A/B Testing, Client Management.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:ale@bruschi.uk">ale@bruschi.uk</a></p>
+  </section>
+
+</body>
+</html>

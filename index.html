@@ -9,32 +9,14 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
-    /* --------------------------------------------------
-       THEME VARIABLES (LIGHT + DARK MODE)
-    -------------------------------------------------- */
     :root {
       --bg: #f2f2f2;
       --text: #111;
       --muted: #555;
       --border: #000;
       --accent: #000;
-      --panel: #fff;
-      --gridline: rgba(0,0,0,0.15);
     }
 
-    body.dark {
-      --bg: #111;
-      --text: #eee;
-      --muted: #aaa;
-      --border: #eee;
-      --accent: #fff;
-      --panel: #000;
-      --gridline: rgba(255,255,255,0.15);
-    }
-
-    /* --------------------------------------------------
-       GLOBAL RESET
-    -------------------------------------------------- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -47,95 +29,47 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       line-height: 1.35;
-      transition: background 0.3s, color 0.3s;
     }
 
-    /* --------------------------------------------------
-       PAGE WRAPPER WITH GRIDLINES
-    -------------------------------------------------- */
     .page {
       max-width: 1100px;
       margin: 0 auto;
-      background: var(--panel);
+      background: #fff;
       border: 3px solid var(--border);
       padding: 28px;
-      position: relative;
-      overflow: hidden;
     }
 
-    /* Poster-style gridlines */
-    .page::before,
-    .page::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: var(--gridline);
+    /* HEADER ABOVE RIGHT COLUMN */
+    .header-name {
+      grid-column: 2 / 3;
+      margin-bottom: 16px;
+      padding-bottom: 6px;
+      border-bottom: 3px solid var(--border);
     }
 
-    .page::before { left: 33%; }
-    .page::after { left: 66%; }
-
-    /* --------------------------------------------------
-       DARK MODE TOGGLE
-    -------------------------------------------------- */
-    .toggle-dark {
-      position: fixed;
-      top: 20px;
-      right: 20px;
-      padding: 6px 12px;
-      border: 2px solid var(--border);
-      background: var(--panel);
-      color: var(--text);
+    .header-name h1 {
+      font-size: 2.4rem;
       font-weight: 700;
-      cursor: pointer;
-      z-index: 999;
+      letter-spacing: -1px;
     }
 
-    /* --------------------------------------------------
-       GRID LAYOUT
-    -------------------------------------------------- */
+    /* GRID LAYOUT */
     .layout {
       display: grid;
-      grid-template-columns: 1fr 1.6fr;
+      grid-template-columns: 0.9fr 1.8fr;
       gap: 28px;
-      position: relative;
     }
 
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: 1fr;
       }
-      .right-bar {
-        display: none;
+      .header-name {
+        grid-column: 1 / 2;
       }
     }
 
-    /* --------------------------------------------------
-       RIGHT VERTICAL NAME BAR
-    -------------------------------------------------- */
-    .right-bar {
-      position: absolute;
-      right: -3px;
-      top: -3px;
-      bottom: -3px;
-      width: 140px;
-      border-left: 3px solid var(--border);
-      background: var(--panel);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      writing-mode: horizontal-tb;
-      font-weight: 700;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-
-    /* --------------------------------------------------
-       TYPOGRAPHY + SECTIONS
-    -------------------------------------------------- */
+    /* TYPOGRAPHY */
     h2 {
       font-size: 0.95rem;
       font-weight: 700;
@@ -172,7 +106,7 @@
     .tag {
       padding: 2px 6px;
       border: 2px solid var(--border);
-      background: var(--panel);
+      background: #fff;
       font-weight: 600;
       white-space: nowrap;
     }
@@ -246,23 +180,16 @@
       text-decoration: underline;
     }
   </style>
-
-  <script>
-    function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-    }
-  </script>
 </head>
 
 <body>
-  <button class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</button>
-
   <div class="page">
 
-    <!-- VERTICAL RIGHT NAME BAR -->
-    <div class="right-bar">Alessandro Bruschi</div>
-
+    <!-- NAME ABOVE RIGHT COLUMN -->
     <div class="layout">
+      <header class="header-name">
+        <h1>Alessandro Bruschi</h1>
+      </header>
 
       <!-- LEFT COLUMN -->
       <div>

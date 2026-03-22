@@ -9,14 +9,32 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
   <style>
+    /* --------------------------------------------------
+       THEME VARIABLES (LIGHT + DARK MODE)
+    -------------------------------------------------- */
     :root {
       --bg: #f2f2f2;
       --text: #111;
       --muted: #555;
       --border: #000;
       --accent: #000;
+      --panel: #fff;
+      --gridline: rgba(0,0,0,0.15);
     }
 
+    body.dark {
+      --bg: #111;
+      --text: #eee;
+      --muted: #aaa;
+      --border: #eee;
+      --accent: #fff;
+      --panel: #000;
+      --gridline: rgba(255,255,255,0.15);
+    }
+
+    /* --------------------------------------------------
+       GLOBAL RESET
+    -------------------------------------------------- */
     * {
       box-sizing: border-box;
       margin: 0;
@@ -29,40 +47,95 @@
       font-family: Arial, sans-serif;
       padding: 20px;
       line-height: 1.35;
+      transition: background 0.3s, color 0.3s;
     }
 
+    /* --------------------------------------------------
+       PAGE WRAPPER WITH GRIDLINES
+    -------------------------------------------------- */
     .page {
       max-width: 1100px;
       margin: 0 auto;
-      background: #fff;
+      background: var(--panel);
       border: 3px solid var(--border);
       padding: 28px;
+      position: relative;
+      overflow: hidden;
     }
 
-    header {
-      border-bottom: 3px solid var(--border);
-      padding-bottom: 12px;
-      margin-bottom: 20px;
+    /* Poster-style gridlines */
+    .page::before,
+    .page::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 1px;
+      background: var(--gridline);
     }
 
-    header h1 {
-      font-size: 2.4rem;
+    .page::before { left: 33%; }
+    .page::after { left: 66%; }
+
+    /* --------------------------------------------------
+       DARK MODE TOGGLE
+    -------------------------------------------------- */
+    .toggle-dark {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      padding: 6px 12px;
+      border: 2px solid var(--border);
+      background: var(--panel);
+      color: var(--text);
       font-weight: 700;
-      letter-spacing: -1px;
+      cursor: pointer;
+      z-index: 999;
     }
 
+    /* --------------------------------------------------
+       GRID LAYOUT
+    -------------------------------------------------- */
     .layout {
       display: grid;
-      grid-template-columns: 0.9fr 1.8fr;
+      grid-template-columns: 1fr 1.6fr;
       gap: 28px;
+      position: relative;
     }
 
     @media (max-width: 800px) {
       .layout {
         grid-template-columns: 1fr;
       }
+      .right-bar {
+        display: none;
+      }
     }
 
+    /* --------------------------------------------------
+       RIGHT VERTICAL NAME BAR
+    -------------------------------------------------- */
+    .right-bar {
+      position: absolute;
+      right: -3px;
+      top: -3px;
+      bottom: -3px;
+      width: 140px;
+      border-left: 3px solid var(--border);
+      background: var(--panel);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      writing-mode: horizontal-tb;
+      font-weight: 700;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* --------------------------------------------------
+       TYPOGRAPHY + SECTIONS
+    -------------------------------------------------- */
     h2 {
       font-size: 0.95rem;
       font-weight: 700;
@@ -88,6 +161,7 @@
       color: var(--muted);
     }
 
+    /* TAGS */
     .tag-list {
       display: flex;
       flex-wrap: wrap;
@@ -98,7 +172,7 @@
     .tag {
       padding: 2px 6px;
       border: 2px solid var(--border);
-      background: #fff;
+      background: var(--panel);
       font-weight: 600;
       white-space: nowrap;
     }
@@ -108,6 +182,7 @@
       color: var(--muted);
     }
 
+    /* EXPERIENCE */
     .job {
       margin-bottom: 18px;
     }
@@ -151,6 +226,7 @@
       font-size: 0.8rem;
     }
 
+    /* FOOTER */
     footer.contact-bar {
       margin-top: 24px;
       padding-top: 12px;
@@ -170,15 +246,24 @@
       text-decoration: underline;
     }
   </style>
+
+  <script>
+    function toggleDarkMode() {
+      document.body.classList.toggle('dark');
+    }
+  </script>
 </head>
 
 <body>
+  <button class="toggle-dark" onclick="toggleDarkMode()">Dark Mode</button>
+
   <div class="page">
-    <header>
-      <h1>Alessandro Bruschi</h1>
-    </header>
+
+    <!-- VERTICAL RIGHT NAME BAR -->
+    <div class="right-bar">Alessandro Bruschi</div>
 
     <div class="layout">
+
       <!-- LEFT COLUMN -->
       <div>
         <section class="section">

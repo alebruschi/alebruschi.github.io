@@ -39,12 +39,14 @@
       padding: 28px;
     }
 
-    /* HEADER ABOVE RIGHT COLUMN */
+    /* HEADER SPANNING BOTH COLUMNS */
     .header-name {
-      grid-column: 2 / 3;
+      grid-column: 1 / -1; /* spans full width */
       margin-bottom: 16px;
       padding-bottom: 6px;
       border-bottom: 3px solid var(--border);
+      display: flex;
+      justify-content: flex-end; /* aligns name with right column */
     }
 
     .header-name h1 {
@@ -65,7 +67,7 @@
         grid-template-columns: 1fr;
       }
       .header-name {
-        grid-column: 1 / 2;
+        justify-content: flex-start;
       }
     }
 
@@ -185,8 +187,9 @@
 <body>
   <div class="page">
 
-    <!-- NAME ABOVE RIGHT COLUMN -->
     <div class="layout">
+
+      <!-- FULL-WIDTH HEADER WITH RIGHT-ALIGNED NAME -->
       <header class="header-name">
         <h1>Alessandro Bruschi</h1>
       </header>

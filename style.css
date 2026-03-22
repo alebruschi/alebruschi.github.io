@@ -1,3 +1,11 @@
+:root {
+  --bg: #e8e8e8;          /* light concrete */
+  --panel: #f7f7f7;       /* lighter slab */
+  --text: #2e2e2e;        /* dark grey */
+  --muted: #6a6a6a;       /* soft grey */
+  --accent: #1e1e1e;      /* charcoal */
+  --border: #d6d6d6;      /* concrete border */
+}
 body {
   font-family: Helvetica, Arial, sans-serif;
   margin: 60px auto;

@@ -4,10 +4,8 @@
   <meta charset="UTF-8">
   <title>Curriculum Vitae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <!-- Correct favicon paths for GitHub Pages project folder -->
-  <link rel="icon" type="image/png" href="favicon.png">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <style>
     :root {
@@ -36,84 +34,289 @@
       max-width: 960px;
       margin: 0 auto;
       background: #ffffff;
-      border: 1px solid var(--border);
       padding: 40px;
-      border-radius: 6px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
-    h1, h2, h3 {
-      margin-top: 0;
-      font-weight: 600;
+    header {
+      border-bottom: 1px solid #dcdcdc;
+      padding-bottom: 16px;
+      margin-bottom: 24px;
+    }
+
+    header h1 {
+      margin: 0 0 4px;
+      font-size: 28px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
       color: var(--accent);
     }
 
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-    }
-
-    h2 {
-      font-size: 1.4rem;
-      margin-top: 30px;
-      border-bottom: 1px solid var(--border);
-      padding-bottom: 6px;
-    }
-
-    p, li {
-      font-size: 1rem;
-      color: var(--text);
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    .muted {
+    header .meta {
+      font-size: 14px;
       color: var(--muted);
     }
 
+    header .meta a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header .meta a:hover {
+      text-decoration: underline;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1.9fr;
+      gap: 32px;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    h2 {
+      font-size: 14px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+      color: var(--accent);
+    }
+
+    h3 {
+      font-size: 14px;
+      margin: 0 0 4px;
+    }
+
     .section {
-      margin-bottom: 30px;
+      margin-bottom: 28px;
+    }
+
+    .profile {
+      font-size: 14px;
+      color: var(--muted);
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 10px;
+      font-size: 13px;
+    }
+
+    .tag {
+      padding: 2px 8px;
+      border-radius: 999px;
+      border: 1px solid #d0d0d0;
+      white-space: nowrap;
+      background: #fafafa;
+    }
+
+    .subtle {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .job {
+      margin-bottom: 18px;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--accent);
+    }
+
+    .job-dates {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .job-key-impact {
+      font-size: 13px;
+      color: var(--muted);
+      margin: 6px 0 4px;
+      font-style: italic;
+    }
+
+    ul {
+      margin: 6px 0 0;
+      padding-left: 18px;
+      font-size: 13px;
+    }
+
+    li + li {
+      margin-top: 2px;
+    }
+
+    .edu-item {
+      margin-bottom: 8px;
+      font-size: 13px;
     }
   </style>
 </head>
 
 <body>
   <div class="page">
+    <header>
+      <h1>Alessandro Bruschi</h1>
+    </header>
 
-    <h1>Your Name</h1>
-    <p class="muted">Your Title • Your Location • your@email.com</p>
+    <div class="layout">
+      <!-- LEFT COLUMN -->
+      <div>
+        <section class="section">
+          <h2>Profile</h2>
+          <p class="profile">
+            Search &amp; eCommerce Specialist with 10+ years’ experience in PPC,
+            performance media, and multi‑market account management. Strong
+            background in Google Ads, Microsoft Ads, Meta, and eCommerce
+            strategy. Known for analytical thinking, clear communication, and
+            building long‑term client relationships. Comfortable leading
+            strategy, optimisation, reporting, and team development.
+          </p>
+        </section>
 
-    <div class="section">
-      <h2>Profile</h2>
-      <p>Your professional summary goes here.</p>
+        <section class="section">
+          <h2>Core Skills</h2>
+          <div class="tag-list">
+            <span class="tag">PPC Strategy</span>
+            <span class="tag">Paid Search</span>
+            <span class="tag">eCommerce</span>
+            <span class="tag">Google Ads</span>
+            <span class="tag">Performance Max</span>
+            <span class="tag">Microsoft Ads</span>
+            <span class="tag">Meta Ads</span>
+            <span class="tag">Reporting &amp; Insights</span>
+            <span class="tag">A/B Testing</span>
+            <span class="tag">Budget Management</span>
+            <span class="tag">Client Management</span>
+            <span class="tag">Training &amp; Enablement</span>
+            <span class="tag">Team Leadership</span>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Languages</h2>
+          <p class="subtle">
+            Italian (Native) • English (Native) • French (Fluent) • Spanish (Basic)
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Education</h2>
+          <div class="edu-item">
+            <strong>BA Languages and Cultures (English &amp; French)</strong><br>
+            Università degli Studi, Milan
+          </div>
+          <div class="edu-item">
+            <strong>Liceo Classico A. Manzoni</strong><br>
+            Milan
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT COLUMN -->
+      <div>
+        <section class="section">
+          <h2>Experience</h2>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">PPC Consultant — Kelkoo Group</div>
+              <div class="job-dates">Feb 2019 – Present</div>
+            </div>
+            <div class="job-key-impact">
+              Expanded Kelkoo’s offering from Shopping‑only to a full Paid Media service.
+            </div>
+            <ul>
+              <li>Lead PPC strategy across global and local clients.</li>
+              <li>Manage Google, Microsoft, Meta, and Awin campaigns.</li>
+              <li>Built and mentored an internal Paid Media team.</li>
+              <li>Delivered client workshops and Google‑partnered webinars.</li>
+              <li>Improved reporting frameworks and long‑term performance.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Search Account Manager — Reprise Digital</div>
+              <div class="job-dates">Jun 2017 – Feb 2019</div>
+            </div>
+            <div class="job-key-impact">
+              Improved performance and transparency across major accounts.
+            </div>
+            <ul>
+              <li>Developed integrated PPC and eCommerce strategies.</li>
+              <li>Led performance reviews and optimisation roadmaps.</li>
+              <li>Delivered strategic recommendations and reporting improvements.</li>
+              <li>Supported junior development and training.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Paid Search Planner — PHD Worldwide</div>
+              <div class="job-dates">Jun 2016 – May 2017</div>
+            </div>
+            <div class="job-key-impact">
+              Strengthened client trust across multi‑market PPC accounts.
+            </div>
+            <ul>
+              <li>Managed PPC campaigns across multiple markets.</li>
+              <li>Main client contact for performance and strategy.</li>
+              <li>Oversaw budgeting, forecasting, and invoicing.</li>
+              <li>Produced tailored performance reports.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Paid Search Executive — PHD Worldwide</div>
+              <div class="job-dates">Jun 2015 – May 2016</div>
+            </div>
+            <div class="job-key-impact">
+              Built foundational PPC and analytics expertise.
+            </div>
+            <ul>
+              <li>Developed core PPC and analytics skills.</li>
+              <li>Managed Unilever accounts across Italy, UK, and CEE.</li>
+            </ul>
+          </div>
+
+          <div class="job">
+            <div class="job-header">
+              <div class="job-title">Freelance Journalist</div>
+              <div class="job-dates">2011 – 2016</div>
+            </div>
+            <div class="job-key-impact">
+              Developed strong writing and research skills.
+            </div>
+            <ul>
+              <li>Wrote and translated content for online magazines.</li>
+              <li>Contributor for Condé Nast Italy.</li>
+            </ul>
+          </div>
+
+        </section>
+      </div>
     </div>
-
-    <div class="section">
-      <h2>Experience</h2>
-      <h3>Job Title — Company</h3>
-      <p class="muted">2020–Present</p>
-      <ul>
-        <li>Responsibility or achievement</li>
-        <li>Responsibility or achievement</li>
-      </ul>
-    </div>
-
-    <div class="section">
-      <h2>Education</h2>
-      <h3>Degree — Institution</h3>
-      <p class="muted">Year</p>
-    </div>
-
-    <div class="section">
-      <h2>Skills</h2>
-      <ul>
-        <li>Skill 1</li>
-        <li>Skill 2</li>
-        <li>Skill 3</li>
-      </ul>
-    </div>
-
   </div>
+  <footer class="contact-bar">
+  <a href="mailto:ale@bruschi.uk">Email Me</a>
+  <a href="https://www.linkedin.com/in/alebruschi">LinkedIn</a>
+</footer>
 </body>
 </html>

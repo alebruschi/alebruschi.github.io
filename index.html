@@ -4,74 +4,66 @@
   <meta charset="UTF-8">
   <title>Curriculum Vitae</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Correct favicon paths for GitHub Pages project folder -->
   <link rel="icon" type="image/png" href="favicon.png">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 
-
   <style>
+    /* Brutalist palette: stark, structural, minimal */
     :root {
-      --bg: #e8e8e8;          /* light concrete */
-      --panel: #f7f7f7;       /* lighter slab */
-      --text: #2e2e2e;        /* dark grey */
-      --muted: #6a6a6a;       /* soft grey */
-      --accent: #1e1e1e;      /* charcoal */
-      --border: #d6d6d6;      /* concrete border */
+      --bg: #f2f2f2;
+      --text: #111;
+      --muted: #555;
+      --border: #000;
+      --accent: #000;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
     body {
-      margin: 0;
-      padding: 40px 20px;
-      font-family: "Nimbus Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      font-family: Arial, sans-serif;
+      padding: 40px 20px;
+      line-height: 1.45;
     }
 
+    /* Brutalist container: sharp edges, thick borders */
     .page {
       max-width: 960px;
       margin: 0 auto;
-      background: #ffffff;
+      background: #fff;
+      border: 3px solid var(--border);
       padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
     }
 
     header {
-      border-bottom: 1px solid #dcdcdc;
-      padding-bottom: 16px;
-      margin-bottom: 24px;
+      border-bottom: 3px solid var(--border);
+      padding-bottom: 20px;
+      margin-bottom: 30px;
     }
 
     header h1 {
-      margin: 0 0 4px;
-      font-size: 28px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      color: var(--accent);
+      font-size: 3rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      margin-bottom: 5px;
     }
 
     header .meta {
-      font-size: 14px;
+      font-size: 0.95rem;
       color: var(--muted);
-    }
-
-    header .meta a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    header .meta a:hover {
-      text-decoration: underline;
     }
 
     .layout {
       display: grid;
-      grid-template-columns: 1.1fr 1.9fr;
-      gap: 32px;
+      grid-template-columns: 1fr 1.6fr;
+      gap: 40px;
     }
 
     @media (max-width: 800px) {
@@ -81,90 +73,111 @@
     }
 
     h2 {
-      font-size: 14px;
-      letter-spacing: 0.16em;
+      font-size: 1.1rem;
+      font-weight: 700;
       text-transform: uppercase;
-      margin: 0 0 12px;
-      color: var(--accent);
+      letter-spacing: 0.1em;
+      border-bottom: 3px solid var(--border);
+      padding-bottom: 6px;
+      margin-bottom: 16px;
     }
 
     h3 {
-      font-size: 14px;
-      margin: 0 0 4px;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 4px;
     }
 
     .section {
-      margin-bottom: 28px;
+      margin-bottom: 40px;
     }
 
     .profile {
-      font-size: 14px;
+      font-size: 0.95rem;
       color: var(--muted);
+      line-height: 1.5;
     }
 
     .tag-list {
       display: flex;
       flex-wrap: wrap;
-      gap: 6px 10px;
-      font-size: 13px;
+      gap: 8px 12px;
+      font-size: 0.85rem;
     }
 
     .tag {
-      padding: 2px 8px;
-      border-radius: 999px;
-      border: 1px solid #d0d0d0;
+      padding: 3px 10px;
+      border: 2px solid var(--border);
+      background: #fff;
       white-space: nowrap;
-      background: #fafafa;
+      font-weight: 600;
     }
 
     .subtle {
-      font-size: 13px;
+      font-size: 0.9rem;
       color: var(--muted);
     }
 
     .job {
-      margin-bottom: 18px;
+      margin-bottom: 28px;
     }
 
     .job-header {
       display: flex;
       justify-content: space-between;
-      gap: 12px;
       align-items: baseline;
       flex-wrap: wrap;
+      gap: 10px;
     }
 
     .job-title {
-      font-weight: 600;
-      font-size: 14px;
-      color: var(--accent);
+      font-weight: 700;
+      font-size: 1rem;
     }
 
     .job-dates {
-      font-size: 13px;
+      font-size: 0.9rem;
       color: var(--muted);
     }
 
     .job-key-impact {
-      font-size: 13px;
+      font-size: 0.9rem;
       color: var(--muted);
-      margin: 6px 0 4px;
+      margin: 6px 0 8px;
       font-style: italic;
     }
 
     ul {
-      margin: 6px 0 0;
-      padding-left: 18px;
-      font-size: 13px;
+      padding-left: 20px;
+      font-size: 0.9rem;
     }
 
     li + li {
-      margin-top: 2px;
+      margin-top: 4px;
     }
 
     .edu-item {
-      margin-bottom: 8px;
-      font-size: 13px;
+      margin-bottom: 12px;
+      font-size: 0.9rem;
+    }
+
+    footer.contact-bar {
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 3px solid var(--border);
+      display: flex;
+      gap: 20px;
+      font-size: 1rem;
+    }
+
+    footer.contact-bar a {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    footer.contact-bar a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
@@ -315,9 +328,10 @@
       </div>
     </div>
   </div>
+
   <footer class="contact-bar">
-  <a href="mailto:ale@bruschi.uk">Email Me</a>
-  <a href="https://www.linkedin.com/in/alebruschi">LinkedIn</a>
-</footer>
+    <a href="mailto:ale@bruschi.uk">Email Me</a>
+    <a href="https://www.linkedin.com/in/alebruschi">LinkedIn</a>
+  </footer>
 </body>
 </html>

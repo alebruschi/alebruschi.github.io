@@ -77,7 +77,6 @@
       padding: 28px;
     }
 
-    /* HEADER SPANNING BOTH COLUMNS */
     .header-name {
       grid-column: 1 / -1;
       margin-bottom: 16px;
@@ -93,7 +92,6 @@
       letter-spacing: -1px;
     }
 
-    /* GRID LAYOUT */
     .layout {
       display: grid;
       grid-template-columns: 0.9fr 1.8fr;
@@ -109,7 +107,6 @@
       }
     }
 
-    /* TYPOGRAPHY */
     h2 {
       font-size: 0.95rem;
       font-weight: 700;
@@ -135,7 +132,6 @@
       color: var(--muted);
     }
 
-    /* TAGS */
     .tag-list {
       display: flex;
       flex-wrap: wrap;
@@ -156,7 +152,6 @@
       color: var(--muted);
     }
 
-    /* EXPERIENCE */
     .job {
       margin-bottom: 18px;
     }
@@ -200,7 +195,6 @@
       font-size: 0.8rem;
     }
 
-    /* FOOTER */
     footer.contact-bar {
       margin-top: 24px;
       padding-top: 12px;
@@ -227,14 +221,13 @@
 
     <div class="layout">
 
-      <!-- FULL-WIDTH HEADER WITH RIGHT-ALIGNED NAME -->
       <header class="header-name">
         <h1>Alessandro Bruschi</h1>
       </header>
 
       <!-- LEFT COLUMN -->
       <div>
-        <section class="section">
+        <section class="section" id="profile">
           <h2>Profile</h2>
           <p class="profile">
             Search &amp; eCommerce Specialist with 10+ years’ experience in PPC,
@@ -246,7 +239,7 @@
           </p>
         </section>
 
-        <section class="section">
+        <section class="section" id="skills">
           <h2>Core Skills</h2>
           <div class="tag-list">
             <span class="tag">Paid Search</span>
@@ -268,14 +261,14 @@
           </div>
         </section>
 
-        <section class="section">
+        <section class="section" id="languages">
           <h2>Languages</h2>
           <p class="subtle">
             Italian (Native) • English (Native) • French (Fluent) • Spanish (Basic)
           </p>
         </section>
 
-        <section class="section">
+        <section class="section" id="education">
           <h2>Education</h2>
           <div class="edu-item">
             <strong>BA Languages and Cultures</strong><br>
@@ -290,7 +283,7 @@
 
       <!-- RIGHT COLUMN -->
       <div>
-        <section class="section">
+        <section class="section" id="experience">
           <h2>Experience</h2>
 
           <div class="job">
@@ -375,7 +368,7 @@
     </div>
   </div>
 
-  <footer class="contact-bar">
+  <footer class="contact-bar" id="contact">
     <a href="mailto:ale@bruschi.uk">Email Me</a>
     <a href="https://www.linkedin.com/in/alebruschi">LinkedIn</a>
   </footer>
